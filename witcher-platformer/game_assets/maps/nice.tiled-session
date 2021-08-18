@@ -1,0 +1,221 @@
+{
+    "Map/SizeTest": {
+        "height": 4300,
+        "width": 2
+    },
+    "activeFile": "Fullmain2.1.tsx",
+    "expandedProjectPaths": [
+        "."
+    ],
+    "fileStates": {
+        "C:/Users/gills/Desktop/platform_tutorial/platform_tutorial/map.tmx": {
+            "scale": 0.209296875,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 1600.5972377752894,
+                "y": 1282.8667413213889
+            }
+        },
+        "C:/Users/gills/Desktop/platform_tutorial/platform_tutorial/map.tmx#my_tiles": {
+            "scaleInDock": 1
+        },
+        "C:/Users/gills/Desktop/platform_tutorial/platform_tutorial/map2_level_1.tmx": {
+            "scale": 0.12580078125,
+            "selectedLayer": 4,
+            "viewCenter": {
+                "x": 2567.5516224188787,
+                "y": 1092.9979816798636
+            }
+        },
+        "C:/Users/gills/Desktop/platform_tutorial/platform_tutorial/map2_level_1.tmx#tileset": {
+            "scaleInDock": 1
+        },
+        "C:/Users/gills/Desktop/platform_tutorial/platform_tutorial/map2_level_2.tmx": {
+            "scale": 0.12580078125,
+            "selectedLayer": 4,
+            "viewCenter": {
+                "x": 2567.5516224188787,
+                "y": 965.812761993479
+            }
+        },
+        "C:/Users/gills/Desktop/platform_tutorial/platform_tutorial/map2_level_2.tmx#tiles": {
+            "scaleInDock": 1
+        },
+        "Fullmain.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1.5
+        },
+        "Fullmain2.1.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1.5
+        },
+        "animated_water.tsx": {
+            "dynamicWrapping": false,
+            "scaleInDock": 3,
+            "scaleInEditor": 4
+        },
+        "background.tsx": {
+            "dynamicWrapping": true,
+            "scaleInDock": 0.03125,
+            "scaleInEditor": 3
+        },
+        "character.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 2
+        },
+        "decorative_obj.tsx": {
+            "dynamicWrapping": false,
+            "scaleInDock": 0.75,
+            "scaleInEditor": 3
+        },
+        "env_ground.tsx": {
+            "dynamicWrapping": false,
+            "scaleInDock": 1,
+            "scaleInEditor": 3
+        },
+        "env_mon.tsx": {
+            "dynamicWrapping": false,
+            "scaleInDock": 1.5,
+            "scaleInEditor": 3
+        },
+        "env_rock.tsx": {
+            "dynamicWrapping": false,
+            "scaleInDock": 0.75,
+            "scaleInEditor": 3
+        },
+        "env_trees.tsx": {
+            "scaleInDock": 0.75,
+            "scaleInEditor": 3
+        },
+        "gold_coin.tsx": {
+            "scaleInDock": 8,
+            "scaleInEditor": 1.5
+        },
+        "imporved_map.tmx": {
+            "scale": 0.33,
+            "selectedLayer": 5,
+            "viewCenter": {
+                "x": 612.1212121212122,
+                "y": 4471.212121212121
+            }
+        },
+        "level1.json": {
+            "scale": 0.45421875,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 801.3759889920882,
+                "y": 800.2751977984176
+            }
+        },
+        "level1.tmx": {
+            "scale": 0.5,
+            "selectedLayer": 3,
+            "viewCenter": {
+                "x": 2039,
+                "y": -343
+            }
+        },
+        "level1_test.tmx": {
+            "scale": 0.5,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 644,
+                "y": 119
+            }
+        },
+        "pack-1 tilset.tsx": {
+            "dynamicWrapping": false,
+            "scaleInDock": 3,
+            "scaleInEditor": 3
+        },
+        "pack-2 objects.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 3
+        },
+        "pack-2.tsx": {
+            "scaleInDock": 1.5,
+            "scaleInEditor": 3
+        },
+        "pack-3.tsx": {
+            "dynamicWrapping": false,
+            "scaleInDock": 1.5,
+            "scaleInEditor": 3
+        },
+        "red_coin.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1.5
+        },
+        "silver_coin.tsx": {
+            "scaleInDock": 3,
+            "scaleInEditor": 1.5
+        },
+        "test.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 3
+        },
+        "tileset.tsx": {
+            "scaleInDock": 2,
+            "scaleInEditor": 1
+        },
+        "top_far_bgrnd.tsx": {
+            "scaleInDock": 2,
+            "scaleInEditor": 3
+        },
+        "untitled.tmx": {
+            "scale": 0.87875,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 303.2716927453769,
+                "y": 690.1849217638692
+            }
+        },
+        "wood_env.tsx": {
+            "scaleInDock": 0.33,
+            "scaleInEditor": 3
+        }
+    },
+    "frame.defaultDuration": 200,
+    "last.exportedFilePath": "C:/Users/gills/Desktop/VIP/Private/Software Projects/Witcher-Platformer/witcher-platformer/maps",
+    "last.imagePath": "C:/Users/gills/Desktop/VIP/Private/Software Projects/Witcher-Platformer/witcher-platformer/game-art/coin_pack",
+    "map.height": 200,
+    "map.lastUsedExportFilter": "All Files (*)",
+    "map.lastUsedFormat": "tmx",
+    "map.layerDataFormat": null,
+    "map.tileHeight": 16,
+    "map.tileWidth": 16,
+    "map.width": 200,
+    "openFiles": [
+        "imporved_map.tmx",
+        "Fullmain2.1.tsx",
+        "gold_coin.tsx",
+        "silver_coin.tsx",
+        "red_coin.tsx"
+    ],
+    "project": "nice.tiled-project",
+    "property.type": "int",
+    "recentFiles": [
+        "imporved_map.tmx",
+        "red_coin.tsx",
+        "silver_coin.tsx",
+        "gold_coin.tsx",
+        "Fullmain2.1.tsx",
+        "Fullmain.tsx",
+        "C:/Users/gills/Desktop/platform_tutorial/platform_tutorial/map.tmx",
+        "C:/Users/gills/Desktop/platform_tutorial/platform_tutorial/map2_level_2.tmx",
+        "C:/Users/gills/Desktop/platform_tutorial/platform_tutorial/map2_level_1.tmx",
+        "character.tsx",
+        "test.tsx",
+        "animated_water.tsx"
+    ],
+    "resizeMap.removeObjects": true,
+    "tileset.lastUsedFormat": "tsx",
+    "tileset.margin": 0,
+    "tileset.spacing": 0,
+    "tileset.tileSize": {
+        "height": 16,
+        "width": 16
+    },
+    "tileset.transparentColor": "#000000",
+    "tileset.type": 0,
+    "tileset.useTransparentColor": true
+}
