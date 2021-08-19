@@ -1,4 +1,4 @@
- # ![alt text](https://github.com/Hariss-Gills/Witcher-Platformer-Experimental/blob/main/witcher-platformer/game_assets/icon.ico?raw=true) Witcher Platformer Game
+ # ![alt text](blob/main/witcher-platformer/game_assets/icon.ico?raw=true) Witcher Platformer Game
 > A one level platformer game based on the witcher world
 
 
