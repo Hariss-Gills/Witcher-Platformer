@@ -45,7 +45,7 @@ class MenuView(arcade.View):
 
     def on_show(self):
         self.setup()
-        self.background_bottom_sprite = sp.Background_sprites(0 ,'game_assets\\tilesets\pack-1\\background(1).png')
+        self.background_bottom_sprite = sp.Background_sprites(0 ,'game_assets\main_background\\background.png')
         self.gui_sprite = sp.Background_sprites(0 ,'game_assets\gui\gui_back.png')
         self.gui_sprite.center_x = st.SCREEN_WIDTH//2
         self.gui_sprite.center_y = st.SCREEN_HEIGHT//2
@@ -138,7 +138,7 @@ class OptionsView(arcade.View):
 
     def on_show(self):
         self.setup()
-        self.background_bottom_sprite = sp.Background_sprites(0 ,'game_assets\\tilesets\pack-1\\background(1).png')
+        self.background_bottom_sprite = sp.Background_sprites(0 , 'game_assets\main_background\\background.png')
         self.gui_sprite = sp.Background_sprites(0 ,'game_assets\gui\gui_back.png')
         self.gui_sprite.center_x =  self.view_left + st.SCREEN_WIDTH//2
         self.gui_sprite.center_y = self.view_bottom + st.SCREEN_HEIGHT//2

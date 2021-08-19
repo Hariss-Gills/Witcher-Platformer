@@ -3,11 +3,57 @@
         "height": 4300,
         "width": 2
     },
-    "activeFile": "Fullmain2.1.tsx",
+    "activeFile": "C:/Users/gills/Desktop/VIP/Private/Software Projects/Witcher-Platformer/witcher-platformer/maps/level_1.tmx",
     "expandedProjectPaths": [
+        "tilesets",
+        "tilesets/tileset_images",
         "."
     ],
     "fileStates": {
+        "C:/Users/gills/Desktop/VIP/Private/Software Projects/Witcher-Platformer/witcher-platformer/maps/level_1.tmx": {
+            "scale": 0.5,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 2281,
+                "y": 799
+            }
+        },
+        "C:/Users/gills/Desktop/VIP/Private/Software Projects/Witcher-Platformer/witcher-platformer/maps/tilesets/decor.tsx": {
+            "scaleInDock": 1
+        },
+        "C:/Users/gills/Desktop/VIP/Private/Software Projects/Witcher-Platformer/witcher-platformer/maps/tilesets/env_ground.tsx": {
+            "scaleInDock": 1
+        },
+        "C:/Users/gills/Desktop/VIP/Private/Software Projects/Witcher-Platformer/witcher-platformer/maps/tilesets/env_mon.tsx": {
+            "scaleInDock": 1
+        },
+        "C:/Users/gills/Desktop/VIP/Private/Software Projects/Witcher-Platformer/witcher-platformer/maps/tilesets/env_rock.tsx": {
+            "scaleInDock": 1
+        },
+        "C:/Users/gills/Desktop/VIP/Private/Software Projects/Witcher-Platformer/witcher-platformer/maps/tilesets/env_trees.tsx": {
+            "scaleInDock": 1
+        },
+        "C:/Users/gills/Desktop/VIP/Private/Software Projects/Witcher-Platformer/witcher-platformer/maps/tilesets/gold_coin.tsx": {
+            "scaleInDock": 1
+        },
+        "C:/Users/gills/Desktop/VIP/Private/Software Projects/Witcher-Platformer/witcher-platformer/maps/tilesets/gothicvania_cemetery_objects.tsx": {
+            "scaleInDock": 1
+        },
+        "C:/Users/gills/Desktop/VIP/Private/Software Projects/Witcher-Platformer/witcher-platformer/maps/tilesets/gothicvania_cemetery_tiles.tsx": {
+            "scaleInDock": 1
+        },
+        "C:/Users/gills/Desktop/VIP/Private/Software Projects/Witcher-Platformer/witcher-platformer/maps/tilesets/red_coin.tsx": {
+            "scaleInDock": 1
+        },
+        "C:/Users/gills/Desktop/VIP/Private/Software Projects/Witcher-Platformer/witcher-platformer/maps/tilesets/silver_coin.tsx": {
+            "scaleInDock": 1
+        },
+        "C:/Users/gills/Desktop/VIP/Private/Software Projects/Witcher-Platformer/witcher-platformer/maps/tilesets/spring_star.tsx": {
+            "scaleInDock": 1
+        },
+        "C:/Users/gills/Desktop/VIP/Private/Software Projects/Witcher-Platformer/witcher-platformer/maps/tilesets/top_far_bgrnd.tsx": {
+            "scaleInDock": 1
+        },
         "C:/Users/gills/Desktop/platform_tutorial/platform_tutorial/map.tmx": {
             "scale": 0.209296875,
             "selectedLayer": 0,
@@ -66,7 +112,7 @@
         "decorative_obj.tsx": {
             "dynamicWrapping": false,
             "scaleInDock": 0.75,
-            "scaleInEditor": 3
+            "scaleInEditor": 1.5
         },
         "env_ground.tsx": {
             "dynamicWrapping": false,
@@ -92,18 +138,18 @@
             "scaleInEditor": 1.5
         },
         "imporved_map.tmx": {
-            "scale": 0.33,
+            "scale": 0.25,
             "selectedLayer": 5,
             "viewCenter": {
-                "x": 612.1212121212122,
-                "y": 4471.212121212121
+                "x": 2038,
+                "y": 1706
             }
         },
         "level1.json": {
             "scale": 0.45421875,
             "selectedLayer": 0,
             "viewCenter": {
-                "x": 801.3759889920882,
+                "x": 801.3759889920881,
                 "y": 800.2751977984176
             }
         },
@@ -121,6 +167,14 @@
             "viewCenter": {
                 "x": 644,
                 "y": 119
+            }
+        },
+        "level_1.tmx": {
+            "scale": 0.125,
+            "selectedLayer": 1,
+            "viewCenter": {
+                "x": 2644,
+                "y": 836
             }
         },
         "pack-1 tilset.tsx": {
@@ -157,8 +211,72 @@
             "scaleInDock": 2,
             "scaleInEditor": 1
         },
-        "top_far_bgrnd.tsx": {
+        "tilesets/decor.tsx": {
+            "scaleInDock": 1
+        },
+        "tilesets/decorative_obj.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "tilesets/env_ground.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "tilesets/env_mon.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "tilesets/env_rock.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "tilesets/env_trees.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "tilesets/gold_coin.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "tilesets/gothicvania_cemetery_objects.tsx": {
+            "scaleInDock": 1
+        },
+        "tilesets/gothicvania_cemetery_tiles.tsx": {
+            "scaleInDock": 1
+        },
+        "tilesets/pack-1 tilset.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 4
+        },
+        "tilesets/pack-2 objects.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "tilesets/pack-2.tsx": {
             "scaleInDock": 2,
+            "scaleInEditor": 2
+        },
+        "tilesets/pack-3.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "tilesets/red_coin.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "tilesets/silver_coin.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "tilesets/spring_star.tsx": {
+            "scaleInDock": 1
+        },
+        "tilesets/top_far_bgrnd.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "top_far_bgrnd.tsx": {
+            "scaleInDock": 0.5,
             "scaleInEditor": 3
         },
         "untitled.tmx": {
@@ -176,7 +294,8 @@
     },
     "frame.defaultDuration": 200,
     "last.exportedFilePath": "C:/Users/gills/Desktop/VIP/Private/Software Projects/Witcher-Platformer/witcher-platformer/maps",
-    "last.imagePath": "C:/Users/gills/Desktop/VIP/Private/Software Projects/Witcher-Platformer/witcher-platformer/game-art/coin_pack",
+    "last.externalTilesetPath": "C:/Users/gills/Desktop/VIP/Private/Software Projects/Published/Witcher-Platformer/witcher-platformer/game_assets/maps/tilesets",
+    "last.imagePath": "C:/Users/gills/Desktop/VIP/Private/Software Projects/Published/Witcher-Platformer/witcher-platformer/game_assets/maps/tilesets/tileset_images/gothicvania_cemetery_pack",
     "map.height": 200,
     "map.lastUsedExportFilter": "All Files (*)",
     "map.lastUsedFormat": "tmx",
@@ -185,27 +304,23 @@
     "map.tileWidth": 16,
     "map.width": 200,
     "openFiles": [
-        "imporved_map.tmx",
-        "Fullmain2.1.tsx",
-        "gold_coin.tsx",
-        "silver_coin.tsx",
-        "red_coin.tsx"
+        "C:/Users/gills/Desktop/VIP/Private/Software Projects/Witcher-Platformer/witcher-platformer/maps/level_1.tmx"
     ],
     "project": "nice.tiled-project",
     "property.type": "int",
     "recentFiles": [
-        "imporved_map.tmx",
-        "red_coin.tsx",
-        "silver_coin.tsx",
-        "gold_coin.tsx",
-        "Fullmain2.1.tsx",
-        "Fullmain.tsx",
-        "C:/Users/gills/Desktop/platform_tutorial/platform_tutorial/map.tmx",
-        "C:/Users/gills/Desktop/platform_tutorial/platform_tutorial/map2_level_2.tmx",
-        "C:/Users/gills/Desktop/platform_tutorial/platform_tutorial/map2_level_1.tmx",
-        "character.tsx",
-        "test.tsx",
-        "animated_water.tsx"
+        "C:/Users/gills/Desktop/VIP/Private/Software Projects/Witcher-Platformer/witcher-platformer/maps/level_1.tmx",
+        "level_1.tmx",
+        "tilesets/pack-2.tsx",
+        "tilesets/pack-2 objects.tsx",
+        "tilesets/pack-3.tsx",
+        "tilesets/env_mon.tsx",
+        "tilesets/top_far_bgrnd.tsx",
+        "tilesets/env_trees.tsx",
+        "tilesets/pack-1 tilset.tsx",
+        "tilesets/env_rock.tsx",
+        "tilesets/env_ground.tsx",
+        "imporved_map.tmx"
     ],
     "resizeMap.removeObjects": true,
     "tileset.lastUsedFormat": "tsx",

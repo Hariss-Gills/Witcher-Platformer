@@ -11,7 +11,7 @@ def load_animation(type, frames_start, frames_end):
     '''
     Load the all the frames for the animation in a loop
     '''
-    path = os.path.join(st.current_path, f'game_assets\characters\main_character\{type}\\')
+    path = os.path.join(st.current_path, f'game_assets\sprites\main_character\{type}\\')
     textures = []
     for i in range(frames_start, frames_end):
         texture = load_texture_pair(f'{path}Fullmain_{type}_{i}.png')

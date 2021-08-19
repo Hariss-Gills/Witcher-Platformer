@@ -90,7 +90,7 @@ class MyGame(arcade.View):
         # What are the names of the layers?
         platform_layer = 'main_platforms'
         # Read in the tiled map
-        level1_map = arcade.tilemap.read_tmx(os.path.join(st.current_path, 'game_assets\maps\imporved_map.tmx'))
+        level1_map = arcade.tilemap.read_tmx(os.path.join(st.current_path, 'game_assets\maps\level_1.tmx'))
         self.platforms_list = arcade.tilemap.process_layer(
             map_object=level1_map,layer_name=platform_layer,scaling=st.MAP_SCALING,use_spatial_hash=True) 
 
@@ -108,7 +108,7 @@ class MyGame(arcade.View):
 
 
         # Read in the tiled map
-        level1_map = arcade.tilemap.read_tmx(os.path.join(st.current_path, 'game_assets\maps\imporved_map.tmx'))
+        level1_map = arcade.tilemap.read_tmx(os.path.join(st.current_path, 'game_assets\maps\level_1.tmx'))
 
         self.platforms_damage_list = arcade.tilemap.process_layer(
             map_object=level1_map,layer_name=platform_damage,scaling=st.MAP_SCALING,use_spatial_hash=True)                 
@@ -140,14 +140,14 @@ class MyGame(arcade.View):
         self.player_list = arcade.SpriteList()
 
         # Read in the tiled map to Reload Coins
-        level1_map = arcade.tilemap.read_tmx(os.path.join(st.current_path, 'game_assets\maps\imporved_map.tmx'))
+        level1_map = arcade.tilemap.read_tmx(os.path.join(st.current_path, 'game_assets\maps\level_1.tmx'))
         coins = 'animated_coins'
         self.coins_list = arcade.tilemap.process_layer(
             map_object=level1_map,layer_name=coins,scaling=st.MAP_SCALING,use_spatial_hash=True)
         # Experiment with adding a background over player sprite
-        self.background_bottom_sprite = sp.Background_sprites(0 ,'game_assets\\tilesets\pack-1\\background_0(1).png')
-        self.background_mid_sprite =  sp.Background_sprites(-0.375, 'game_assets\\tilesets\pack-1\\background_1(2).png')
-        self.background_top_sprite = sp.Background_sprites(0.675, 'game_assets\\tilesets\pack-1\\background_2(4).png')
+        self.background_bottom_sprite = sp.Background_sprites(0 ,'game_assets\sprites\\background\\background_bottom.png')
+        self.background_mid_sprite =  sp.Background_sprites(-0.375, 'game_assets\sprites\\background\\background_mid.png')
+        self.background_top_sprite = sp.Background_sprites(0.675, 'game_assets\sprites\\background\\background_top.png')
         self.background_list.append(self.background_bottom_sprite)
         self.background_list.append(self.background_mid_sprite)
         self.background_list.append(self.background_top_sprite)
