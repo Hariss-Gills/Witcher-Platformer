@@ -2,7 +2,7 @@
 Sprites used within the game
 '''
 
-import game_settings as st
+from . import game_settings as st
 import os, arcade
 
    #- - - Animation Helpers - - -#
@@ -11,7 +11,7 @@ def load_animation(type, frames_start, frames_end):
     '''
     Load the all the frames for the animation in a loop
     '''
-    path = os.path.join(st.current_path, f'game_assets\sprites\main_character\{type}\\')
+    path = os.path.join(st.ASSET_PATH, f'sprites\main_character\{type}\\')
     textures = []
     for i in range(frames_start, frames_end):
         texture = load_texture_pair(f'{path}Fullmain_{type}_{i}.png')
@@ -114,7 +114,7 @@ class Main_character(arcade.Sprite):
         elif self.change_y < 0:
             self.cycle_animation(delta_time, self.fall_textures, 100)
             # Land Animation            
-            if len(arcade.get_sprites_at_point([self.center_x ,self.bottom - 30] , platforms)) > 0:
+            if len(arcade.get_sprites_at_point([self.center_x, self.bottom - 30], platforms)) > 0:
                 self.cycle_animation(delta_time, self.land_textures, 175)
                 return            
 class Background_sprites(arcade.Sprite):
@@ -125,7 +125,7 @@ class Background_sprites(arcade.Sprite):
         # Set up parent class
         super().__init__()
     
-        self.texture = arcade.load_texture(os.path.join(st.current_path, texture))
+        self.texture = arcade.load_texture(os.path.join(st.ASSET_PATH, texture))
         self.change_x = change_x  
         
     def update_animation(self, view_left, delta_time: float = 1/60):

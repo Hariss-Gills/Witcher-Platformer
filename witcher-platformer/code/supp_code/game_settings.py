@@ -46,8 +46,7 @@ FULLSCREEN = False
 # Level 1 Loaded
 LOAD_LEVEL_1 = False
 
-# Where your .py file is located
-current_path = os.path.dirname(__file__)
-
+# Where your assets are directory is located
+ASSET_PATH = os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(__file__))), 'game_assets')
 # Font path
-FONT = os.path.join(current_path, 'game_assets/MinimalPixel2')
+FONT = os.path.join(ASSET_PATH, 'MinimalPixel2')

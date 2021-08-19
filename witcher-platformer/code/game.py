@@ -1,8 +1,8 @@
 '''
 Platformer Game
 '''
-import arcade, os, pyglet, arcade.gui, sys, pickle, level_1
-import game_settings as st, game_sprites as sp, game_gui as gui
+import arcade, os, pyglet, arcade.gui, sys, pickle, supp_code.level_1
+import supp_code.game_settings as st, supp_code.game_sprites as sp, supp_code.game_gui as gui
 
 if getattr(sys, 'frozen', False) and hasattr(sys, '_MEIPASS'): # Used for packaging
     os.chdir(sys._MEIPASS)
@@ -13,7 +13,7 @@ class GameWindow(arcade.Window):
     def __init__(self):
         super().__init__(st.SCREEN_WIDTH, st.SCREEN_HEIGHT, st.SCREEN_TITLE, resizable=True)
         self.center_window()
-        self.set_icon(pyglet.image.load(os.path.join(st.current_path, 'game_assets\icon.ico')))
+        self.set_icon(pyglet.image.load(os.path.join(st.ASSET_PATH, 'icon.ico')))
         # Used to keep track of our scrolling
         self.view_port = 0, 0
 
@@ -45,28 +45,28 @@ class MenuView(arcade.View):
 
     def on_show(self):
         self.setup()
-        self.background_bottom_sprite = sp.Background_sprites(0 ,'game_assets\main_background\\background.png')
-        self.gui_sprite = sp.Background_sprites(0 ,'game_assets\gui\gui_back.png')
+        self.background_bottom_sprite = sp.Background_sprites(0 ,'main_background\\background.png')
+        self.gui_sprite = sp.Background_sprites(0 ,'gui\gui_back.png')
         self.gui_sprite.center_x = st.SCREEN_WIDTH//2
         self.gui_sprite.center_y = st.SCREEN_HEIGHT//2
         self.background_bottom_sprite.right = st.SCREEN_WIDTH
         self.background_bottom_sprite.top = st.SCREEN_HEIGHT
         if self.menu_music is None:
-            self.menu_music = arcade.Sound(os.path.join(st.current_path, 'game_assets\sounds\start_screen_music.ogg'))
+            self.menu_music = arcade.Sound(os.path.join(st.ASSET_PATH, 'sounds\start_screen_music.ogg'))
             self.played_menu_music = self.menu_music.play(0.05, loop = True)   
 
     def setup(self):
-        start_button_normal = arcade.load_texture((os.path.join(st.current_path, 'game_assets\gui\start_normal.png')))
-        start_hovered_texture = arcade.load_texture((os.path.join(st.current_path, 'game_assets\gui\start_hover.png')))
-        start_pressed_texture = arcade.load_texture((os.path.join(st.current_path, 'game_assets\gui\start_pressed.png')))
+        start_button_normal = arcade.load_texture((os.path.join(st.ASSET_PATH, 'gui\start_normal.png')))
+        start_hovered_texture = arcade.load_texture((os.path.join(st.ASSET_PATH, 'gui\start_hover.png')))
+        start_pressed_texture = arcade.load_texture((os.path.join(st.ASSET_PATH, 'gui\start_pressed.png')))
 
-        options_button_normal = arcade.load_texture((os.path.join(st.current_path, 'game_assets\gui\options_normal.png')))
-        options_hovered_texture = arcade.load_texture((os.path.join(st.current_path, 'game_assets\gui\options_hover.png')))
-        options_pressed_texture = arcade.load_texture((os.path.join(st.current_path, 'game_assets\gui\options_pressed.png')))
+        options_button_normal = arcade.load_texture((os.path.join(st.ASSET_PATH, 'gui\options_normal.png')))
+        options_hovered_texture = arcade.load_texture((os.path.join(st.ASSET_PATH, 'gui\options_hover.png')))
+        options_pressed_texture = arcade.load_texture((os.path.join(st.ASSET_PATH, 'gui\options_pressed.png')))
 
-        quit_button_normal = arcade.load_texture((os.path.join(st.current_path, 'game_assets\gui\quit_normal.png')))
-        quit_hovered_texture = arcade.load_texture((os.path.join(st.current_path, 'game_assets\gui\quit_hover.png')))
-        quit_pressed_texture = arcade.load_texture((os.path.join(st.current_path, 'game_assets\gui\quit_pressed.png')))
+        quit_button_normal = arcade.load_texture((os.path.join(st.ASSET_PATH, 'gui\quit_normal.png')))
+        quit_hovered_texture = arcade.load_texture((os.path.join(st.ASSET_PATH, 'gui\quit_hover.png')))
+        quit_pressed_texture = arcade.load_texture((os.path.join(st.ASSET_PATH, 'gui\quit_pressed.png')))
 
 
         self.start_button = arcade.gui.UIImageButton(center_x =  st.SCREEN_WIDTH//2, center_y =  st.SCREEN_HEIGHT//2 + 50,
@@ -138,8 +138,8 @@ class OptionsView(arcade.View):
 
     def on_show(self):
         self.setup()
-        self.background_bottom_sprite = sp.Background_sprites(0 , 'game_assets\main_background\\background.png')
-        self.gui_sprite = sp.Background_sprites(0 ,'game_assets\gui\gui_back.png')
+        self.background_bottom_sprite = sp.Background_sprites(0 , 'main_background\\background.png')
+        self.gui_sprite = sp.Background_sprites(0 ,'gui\gui_back.png')
         self.gui_sprite.center_x =  self.view_left + st.SCREEN_WIDTH//2
         self.gui_sprite.center_y = self.view_bottom + st.SCREEN_HEIGHT//2
         self.background_bottom_sprite.right =  self.view_left + st.SCREEN_WIDTH
@@ -152,9 +152,9 @@ class OptionsView(arcade.View):
         self.stats_toggle = arcade.gui.UIToggle(center_x =  self.view_left + st.SCREEN_WIDTH//2 + 70, center_y = self.view_bottom + st.SCREEN_HEIGHT//2 - 50,
         height = 20, value = st.STATS)
         
-        back_button_normal = arcade.load_texture((os.path.join(st.current_path, 'game_assets\gui\\back_button_normal.png')))
-        back_button_hover = arcade.load_texture((os.path.join(st.current_path, 'game_assets\gui\\back_button_hover.png')))
-        back_button_pressed = arcade.load_texture((os.path.join(st.current_path, 'game_assets\gui\\back_button_pressed.png')))
+        back_button_normal = arcade.load_texture((os.path.join(st.ASSET_PATH, 'gui\\back_button_normal.png')))
+        back_button_hover = arcade.load_texture((os.path.join(st.ASSET_PATH, 'gui\\back_button_hover.png')))
+        back_button_pressed = arcade.load_texture((os.path.join(st.ASSET_PATH, 'gui\\back_button_pressed.png')))
         
         self.back_button =  arcade.gui.UIImageButton(center_x =  self.view_left + st.SCREEN_WIDTH//2, center_y = self.view_bottom + st.SCREEN_HEIGHT//2 - 90,
         normal_texture = back_button_normal,
@@ -204,23 +204,23 @@ class PauseView(arcade.View):
 
     def on_show(self):
         self.setup()
-        self.gui_sprite = sp.Background_sprites(0 ,'game_assets\gui\gui_back.png')
+        self.gui_sprite = sp.Background_sprites(0 ,'gui\gui_back.png')
         self.gui_sprite.center_x = self.view_left + st.SCREEN_WIDTH//2
         self.gui_sprite.center_y = self.view_bottom + st.SCREEN_HEIGHT//2 
         self.game_view.background_music.set_volume(0.025, self.game_view.played_backgroud_music)
 
     def setup(self):
-        restart_button_normal = arcade.load_texture((os.path.join(st.current_path, 'game_assets\gui\\restart_normal.png')))
-        restart_hovered_texture = arcade.load_texture((os.path.join(st.current_path, 'game_assets\gui\\restart_hover.png')))
-        restart_pressed_texture = arcade.load_texture((os.path.join(st.current_path, 'game_assets\gui\\restart_pressed.png')))
+        restart_button_normal = arcade.load_texture((os.path.join(st.ASSET_PATH, 'gui\\restart_normal.png')))
+        restart_hovered_texture = arcade.load_texture((os.path.join(st.ASSET_PATH, 'gui\\restart_hover.png')))
+        restart_pressed_texture = arcade.load_texture((os.path.join(st.ASSET_PATH, 'gui\\restart_pressed.png')))
 
-        options_button_normal = arcade.load_texture((os.path.join(st.current_path, 'game_assets\gui\options_normal.png')))
-        options_hovered_texture = arcade.load_texture((os.path.join(st.current_path, 'game_assets\gui\options_hover.png')))
-        options_pressed_texture = arcade.load_texture((os.path.join(st.current_path, 'game_assets\gui\options_pressed.png')))
+        options_button_normal = arcade.load_texture((os.path.join(st.ASSET_PATH, 'gui\options_normal.png')))
+        options_hovered_texture = arcade.load_texture((os.path.join(st.ASSET_PATH, 'gui\options_hover.png')))
+        options_pressed_texture = arcade.load_texture((os.path.join(st.ASSET_PATH, 'gui\options_pressed.png')))
 
-        quit_button_normal = arcade.load_texture((os.path.join(st.current_path, 'game_assets\gui\quit_normal.png')))
-        quit_hovered_texture = arcade.load_texture((os.path.join(st.current_path, 'game_assets\gui\quit_hover.png')))
-        quit_pressed_texture = arcade.load_texture((os.path.join(st.current_path, 'game_assets\gui\quit_pressed.png')))
+        quit_button_normal = arcade.load_texture((os.path.join(st.ASSET_PATH, 'gui\quit_normal.png')))
+        quit_hovered_texture = arcade.load_texture((os.path.join(st.ASSET_PATH, 'gui\quit_hover.png')))
+        quit_pressed_texture = arcade.load_texture((os.path.join(st.ASSET_PATH, 'gui\quit_pressed.png')))
 
 
         self.restart_button = arcade.gui.UIImageButton(center_x = self.view_left + st.SCREEN_WIDTH//2, center_y = self.view_bottom + st.SCREEN_HEIGHT//2 + 50,
@@ -343,7 +343,7 @@ def main():
     '''
     window = GameWindow()
     ui_manager = gui.GUIManager()
-    game_view = level_1.MyGame(ui_manager)
+    game_view = supp_code.level_1.MyGame(ui_manager)
     game_view.load_music()
     menu_view = MenuView(ui_manager, game_view)
     window.show_view(menu_view)
