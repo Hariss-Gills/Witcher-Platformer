@@ -1,7 +1,6 @@
- ![alt text](witcher-platformer/game_assets/icon.ico?raw=true) 
+ ![alt text](witcher-platformer/game_assets/icon.ico?raw=false) 
  # Witcher Platformer Game
 > A one level platformer game based on the witcher world
-
 
 One to two paragraph statement about the game (Controls and Functions)
 
@@ -28,7 +27,7 @@ Distributed under the GPL-3.0 License. See [``LICENSE.txt``](https://github.com/
 
 ## Contributing
 
-1. Fork it (<https://github.com/Hariss-Gills/Witcher-Platformer-Experimental>)
+1. Fork it (<https://github.com/Hariss-Gills/Witcher-Platformer>)
 2. Create your feature branch (`git checkout -b feature/fooBar`)
 3. Commit your changes (`git commit -am 'Add some fooBar'`)
 4. Push to the branch (`git push origin feature/fooBar`)
