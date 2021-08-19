@@ -1,8 +1,8 @@
- # ![alt text](blob/main/witcher-platformer/game_assets/icon.ico?raw=true) Witcher Platformer Game
+ # ![alt text](main/witcher-platformer/game_assets/icon.ico?raw=true) Witcher Platformer Game
 > A one level platformer game based on the witcher world
 
 
-One to two paragraph statement about the game (COntrols and Functions)
+One to two paragraph statement about the game (Controls and Functions)
 
 
 ## Installation
