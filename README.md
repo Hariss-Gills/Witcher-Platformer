@@ -2,8 +2,32 @@
  # Witcher Platformer Game
 > A one level platformer game based on the witcher world
 
-One to two paragraph statement about the game (Controls and Functions)
+### Gameplay
 
+As a hooded witcher 🐺, you traverse through the grim world collecting coins and try to get the best time and score.
+
+**Score is calculated by 1/Time + Points**
+* Red coin = 10 points
+* Gold coin = 5 points
+* Silver coin = 1 point
+### Controls
+
+- W/⬆️/SPACE to Jump
+- A/⬅️ to move left
+- D/➡️ to move right
+- S/⬇️ to move down
+
+### Functions
+
+* Full GUI
+* Options Menu
+* Pause Screen
+
+## Future Plans
+
+* Enemies (Difficult)
+* Animated Coins (Easy)
+* More Levels (Medium)
 
 ## Installation
 
