@@ -1,5 +1,5 @@
 # <img src="witcher-platformer/project_files/game_assets/icon.ico" width="50" height="50"/> Witcher Platformer Game
-> A one level platformer game based on the witcher world
+*A one level platformer game based on the witcher world*
 
 ## Gameplay
 As a hooded witcher 🐺, you traverse through the grim world collecting coins and try to get the best time and score.
@@ -16,7 +16,7 @@ As a hooded witcher 🐺, you traverse through the grim world collecting coins a
 - S/⬇️ to move down
 
 ### Game Play
-
+>*The gif doesn't do the graphics justice*
 <img src="game_play_showcase/game_play.gif"/>
 <img src="game_play_showcase/screenshot_menu.png"/>
 <img src="game_play_showcase/screenshot_options.png"/>
