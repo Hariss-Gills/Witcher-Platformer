@@ -1,11 +1,21 @@
 '''
 Platformer Game
 '''
-import arcade, os, pyglet, arcade.gui, sys, pickle, supp_code.level_1
-import supp_code.game_settings as st, supp_code.game_sprites as sp, supp_code.game_gui as gui
+import arcade
+import os
+import pyglet
+import arcade.gui
+import sys
+import pickle
+import supp_code.level_1
+import supp_code.game_settings as st
+import supp_code.game_sprites as sp
+import supp_code.game_gui as gui
 
-if getattr(sys, 'frozen', False) and hasattr(sys, '_MEIPASS'): # Used for packaging
+if getattr(sys, 'frozen', False) and hasattr(sys, '_MEIPASS'):  # Used for packaging
     os.chdir(sys._MEIPASS)
+
+
 class GameWindow(arcade.Window):
     '''
     Window class the resizes and goes into fullscreen
@@ -21,7 +31,7 @@ class GameWindow(arcade.Window):
         '''
         Method to adjust viewport for all views
         '''
-        arcade.set_viewport(self.view_port[0], self.view_port[0] + st.SCREEN_WIDTH, self.view_port[1], self.view_port[1]+ st.SCREEN_HEIGHT)
+        arcade.set_viewport(self.view_port[0], self.view_port[0] + st.SCREEN_WIDTH, self.view_port[1], self.view_port[1] + st.SCREEN_HEIGHT)
 
     def on_resize(self, width, height):
         '''
@@ -29,6 +39,8 @@ class GameWindow(arcade.Window):
         '''
         super().on_resize(width, height)
         self.adjust_port()
+
+
 class MenuView(arcade.View):
     '''
     Main Menu for the game
@@ -45,8 +57,8 @@ class MenuView(arcade.View):
 
     def on_show(self):
         self.setup()
-        self.background_bottom_sprite = sp.Background_sprites(0 ,'main_background\\background.png')
-        self.gui_sprite = sp.Background_sprites(0 ,'gui\gui_back.png')
+        self.background_bottom_sprite = sp.Background_sprites(0, 'main_background\\background.png')
+        self.gui_sprite = sp.Background_sprites(0, 'gui\gui_back.png')
         self.gui_sprite.center_x = st.SCREEN_WIDTH//2
         self.gui_sprite.center_y = st.SCREEN_HEIGHT//2
         self.background_bottom_sprite.right = st.SCREEN_WIDTH
@@ -68,24 +80,20 @@ class MenuView(arcade.View):
         quit_hovered_texture = arcade.load_texture((os.path.join(st.ASSET_PATH, 'gui\quit_hover.png')))
         quit_pressed_texture = arcade.load_texture((os.path.join(st.ASSET_PATH, 'gui\quit_pressed.png')))
 
+        self.start_button = arcade.gui.UIImageButton(center_x = st.SCREEN_WIDTH//2, center_y = st.SCREEN_HEIGHT//2 + 50,
+                                                     normal_texture = start_button_normal,
+                                                     hover_texture =start_hovered_texture,
+                                                     press_texture = start_pressed_texture)
 
-        self.start_button = arcade.gui.UIImageButton(center_x =  st.SCREEN_WIDTH//2, center_y =  st.SCREEN_HEIGHT//2 + 50,
-        normal_texture = start_button_normal,
-        hover_texture =start_hovered_texture,
-        press_texture = start_pressed_texture
-        )
+        self.options_button = arcade.gui.UIImageButton(center_x = st.SCREEN_WIDTH//2, center_y = st.SCREEN_HEIGHT//2,
+                                                       normal_texture = options_button_normal,
+                                                       hover_texture = options_hovered_texture,
+                                                       press_texture = options_pressed_texture)
 
-        self.options_button = arcade.gui.UIImageButton(center_x =  st.SCREEN_WIDTH//2, center_y = st.SCREEN_HEIGHT//2,
-        normal_texture = options_button_normal,
-        hover_texture = options_hovered_texture,
-        press_texture = options_pressed_texture
-        )
-
-        self.quit_button = arcade.gui.UIImageButton(center_x =  st.SCREEN_WIDTH//2, center_y =  st.SCREEN_HEIGHT//2 - 50,
-        normal_texture = quit_button_normal,
-        hover_texture = quit_hovered_texture,
-        press_texture = quit_pressed_texture
-        )    
+        self.quit_button = arcade.gui.UIImageButton(center_x = st.SCREEN_WIDTH//2, center_y = st.SCREEN_HEIGHT//2 - 50,
+                                                    normal_texture = quit_button_normal,
+                                                    hover_texture = quit_hovered_texture,
+                                                    press_texture = quit_pressed_texture)    
 
         self.ui_manager.add_ui_element(self.start_button)
         self.ui_manager.add_ui_element(self.options_button)
@@ -100,7 +108,6 @@ class MenuView(arcade.View):
             arcade.draw_text('Loaded', st.SCREEN_WIDTH//2, st.SCREEN_HEIGHT//2 - 250, arcade.color.MEDIUM_SPRING_GREEN, font_size=18, anchor_x = 'center', font_name =st.FONT)
         else:
             arcade.draw_text('Loading...', st.SCREEN_WIDTH//2, st.SCREEN_HEIGHT//2 - 250, arcade.color.AZURE_MIST, font_size=18, anchor_x = 'center', font_name =st.FONT)
-
 
     def on_update(self, delta_time: float):
         self.counter += 1
@@ -122,6 +129,8 @@ class MenuView(arcade.View):
             # Load in main layer after main screen is displayed. 
             self.game_view.load_main_layer()
             st.LOAD_LEVEL_1 = True               
+
+
 class OptionsView(arcade.View):
     '''
     Give user the ability to have options in the game
@@ -138,29 +147,28 @@ class OptionsView(arcade.View):
 
     def on_show(self):
         self.setup()
-        self.background_bottom_sprite = sp.Background_sprites(0 , 'main_background\\background.png')
-        self.gui_sprite = sp.Background_sprites(0 ,'gui\gui_back.png')
-        self.gui_sprite.center_x =  self.view_left + st.SCREEN_WIDTH//2
+        self.background_bottom_sprite = sp.Background_sprites(0, 'main_background\\background.png')
+        self.gui_sprite = sp.Background_sprites(0, 'gui\gui_back.png')
+        self.gui_sprite.center_x = self.view_left + st.SCREEN_WIDTH//2
         self.gui_sprite.center_y = self.view_bottom + st.SCREEN_HEIGHT//2
-        self.background_bottom_sprite.right =  self.view_left + st.SCREEN_WIDTH
+        self.background_bottom_sprite.right = self.view_left + st.SCREEN_WIDTH
         self.background_bottom_sprite.top = self.view_bottom + st.SCREEN_HEIGHT
 
     def setup(self):
         
-        self.fullscreen_toggle = arcade.gui.UIToggle(center_x =  self.view_left + st.SCREEN_WIDTH//2 + 70, center_y = self.view_bottom + st.SCREEN_HEIGHT//2,
-        height = 20, value = st.FULLSCREEN)
-        self.stats_toggle = arcade.gui.UIToggle(center_x =  self.view_left + st.SCREEN_WIDTH//2 + 70, center_y = self.view_bottom + st.SCREEN_HEIGHT//2 - 50,
-        height = 20, value = st.STATS)
+        self.fullscreen_toggle = arcade.gui.UIToggle(center_x = self.view_left + st.SCREEN_WIDTH//2 + 70, center_y = self.view_bottom + st.SCREEN_HEIGHT//2,
+                                                     height = 20, value = st.FULLSCREEN)
+        self.stats_toggle = arcade.gui.UIToggle(center_x = self.view_left + st.SCREEN_WIDTH//2 + 70, center_y = self.view_bottom + st.SCREEN_HEIGHT//2 - 50,
+                                                height = 20, value = st.STATS)
         
         back_button_normal = arcade.load_texture((os.path.join(st.ASSET_PATH, 'gui\\back_button_normal.png')))
         back_button_hover = arcade.load_texture((os.path.join(st.ASSET_PATH, 'gui\\back_button_hover.png')))
         back_button_pressed = arcade.load_texture((os.path.join(st.ASSET_PATH, 'gui\\back_button_pressed.png')))
         
-        self.back_button =  arcade.gui.UIImageButton(center_x =  self.view_left + st.SCREEN_WIDTH//2, center_y = self.view_bottom + st.SCREEN_HEIGHT//2 - 90,
-        normal_texture = back_button_normal,
-        hover_texture = back_button_hover,
-        pressed_texture = back_button_pressed
-        )
+        self.back_button =  arcade.gui.UIImageButton(center_x = self.view_left + st.SCREEN_WIDTH//2, center_y = self.view_bottom + st.SCREEN_HEIGHT//2 - 90,
+                                                     normal_texture = back_button_normal,
+                                                     hover_texture = back_button_hover,
+                                                     pressed_texture = back_button_pressed)
 
         self.ui_manager.add_ui_element(self.fullscreen_toggle)
         self.ui_manager.add_ui_element(self.stats_toggle)
@@ -170,9 +178,9 @@ class OptionsView(arcade.View):
         arcade.start_render()
         self.background_bottom_sprite.draw()
         self.gui_sprite.draw()
-        arcade.draw_text('Options',  self.view_left + st.SCREEN_WIDTH//2, self.view_bottom + st.SCREEN_HEIGHT//2 + 50, arcade.color.AZURE_MIST, font_size = 18, anchor_x = 'center', font_name =st.FONT)
-        arcade.draw_text('Fullscreen Mode:',  self.view_left + st.SCREEN_WIDTH//2 - 20, self.view_bottom + st.SCREEN_HEIGHT//2 - 10 , arcade.color.AZURE_MIST, font_size = 12, anchor_x = 'center', font_name =st.FONT)
-        arcade.draw_text('Display Stats:',  self.view_left + st.SCREEN_WIDTH//2 - 20, self.view_bottom + st.SCREEN_HEIGHT//2 - 60, arcade.color.AZURE_MIST, font_size = 12, anchor_x = 'center', font_name =st.FONT)
+        arcade.draw_text('Options', self.view_left + st.SCREEN_WIDTH//2, self.view_bottom + st.SCREEN_HEIGHT//2 + 50, arcade.color.AZURE_MIST, font_size = 18, anchor_x = 'center', font_name = st.FONT)
+        arcade.draw_text('Fullscreen Mode:', self.view_left + st.SCREEN_WIDTH//2 - 20, self.view_bottom + st.SCREEN_HEIGHT//2 - 10, arcade.color.AZURE_MIST, font_size = 12, anchor_x = 'center', font_name = st.FONT)
+        arcade.draw_text('Display Stats:', self.view_left + st.SCREEN_WIDTH//2 - 20, self.view_bottom + st.SCREEN_HEIGHT//2 - 60, arcade.color.AZURE_MIST, font_size = 12, anchor_x = 'center', font_name = st.FONT)
 
     def on_update(self, delta_time: float):
         if self.fullscreen_toggle.value:
@@ -188,6 +196,8 @@ class OptionsView(arcade.View):
         if self.back_button.pressed:
             self.ui_manager.purge_ui_elements()
             self.window.show_view(self.prev_view)
+
+
 class PauseView(arcade.View):
     '''
     Pause Screen for the game
@@ -204,7 +214,7 @@ class PauseView(arcade.View):
 
     def on_show(self):
         self.setup()
-        self.gui_sprite = sp.Background_sprites(0 ,'gui\gui_back.png')
+        self.gui_sprite = sp.Background_sprites(0, 'gui\gui_back.png')
         self.gui_sprite.center_x = self.view_left + st.SCREEN_WIDTH//2
         self.gui_sprite.center_y = self.view_bottom + st.SCREEN_HEIGHT//2 
         self.game_view.background_music.set_volume(0.025, self.game_view.played_backgroud_music)
@@ -224,22 +234,19 @@ class PauseView(arcade.View):
 
 
         self.restart_button = arcade.gui.UIImageButton(center_x = self.view_left + st.SCREEN_WIDTH//2, center_y = self.view_bottom + st.SCREEN_HEIGHT//2 + 50,
-        normal_texture = restart_button_normal,
-        hover_texture = restart_hovered_texture,
-        press_texture = restart_pressed_texture
-        )
+                                                       normal_texture = restart_button_normal,
+                                                       hover_texture = restart_hovered_texture,
+                                                       press_texture = restart_pressed_texture)
 
         self.options_button = arcade.gui.UIImageButton(center_x = self.view_left + st.SCREEN_WIDTH//2, center_y = self.view_bottom + st.SCREEN_HEIGHT//2,
-        normal_texture = options_button_normal,
-        hover_texture = options_hovered_texture,
-        press_texture = options_pressed_texture
-        )
+                                                       normal_texture = options_button_normal,
+                                                       hover_texture = options_hovered_texture,
+                                                       press_texture = options_pressed_texture)
 
         self.quit_button = arcade.gui.UIImageButton(center_x =  self.view_left + st.SCREEN_WIDTH//2, center_y = self.view_bottom + st.SCREEN_HEIGHT//2 - 50,
-        normal_texture = quit_button_normal,
-        hover_texture = quit_hovered_texture,
-        press_texture = quit_pressed_texture
-        )    
+                                                    normal_texture = quit_button_normal,
+                                                    hover_texture = quit_hovered_texture,
+                                                    press_texture = quit_pressed_texture)    
 
         self.ui_manager.add_ui_element(self.restart_button)
         self.ui_manager.add_ui_element(self.options_button)
@@ -249,8 +256,8 @@ class PauseView(arcade.View):
         arcade.start_render()
         self.game_view.draw_main()
         arcade.draw_lrtb_rectangle_filled(self.view_left,  self.view_left + st.SCREEN_WIDTH,
-        self.view_bottom + st.SCREEN_HEIGHT, self.view_bottom,
-        color = arcade.color.AFRICAN_VIOLET + (100,))
+                                          self.view_bottom + st.SCREEN_HEIGHT, self.view_bottom,
+                                          color = arcade.color.AFRICAN_VIOLET + (100,))
         self.gui_sprite.draw()
         arcade.draw_text('Paused', self.view_left + st.SCREEN_WIDTH//2, self.view_bottom + st.SCREEN_HEIGHT//2 + 250, arcade.color.WHITE, font_size=30, anchor_x = 'center', font_name = st.FONT)
     
@@ -262,7 +269,7 @@ class PauseView(arcade.View):
     def on_update(self, delta_time: float):
         if self.restart_button.pressed:
             self.ui_manager.purge_ui_elements()
-            self.game_view.background_music.stop( self.game_view.played_backgroud_music)
+            self.game_view.background_music.stop(self.game_view.played_backgroud_music)
             self.game_view.setup()
             self.window.show_view(self.game_view)
         elif self.options_button.pressed:
@@ -272,6 +279,8 @@ class PauseView(arcade.View):
         elif self.quit_button.pressed:
             self.window.close()
             sys.exit()
+
+
 class GameOverView(PauseView):
     '''
     Display endgame view and calculate highscore
@@ -323,20 +332,21 @@ class GameOverView(PauseView):
         arcade.start_render()
         self.game_view.draw_main()
         arcade.draw_lrtb_rectangle_filled(self.view_left,  self.view_left + st.SCREEN_WIDTH,
-        self.view_bottom + st.SCREEN_HEIGHT, self.view_bottom,
-        color=arcade.color.BLACK + (100,))
+                                          self.view_bottom + st.SCREEN_HEIGHT, self.view_bottom,
+                                          color = arcade.color.BLACK + (100,))
         self.gui_sprite.draw()
         if self.game_view.player_sprite.dead:
-            arcade.draw_text('Game Over', self.view_left + st.SCREEN_WIDTH//2, self.view_bottom + st.SCREEN_HEIGHT//2 + 250, arcade.color.RED, font_size=30, anchor_x = 'center', font_name =st.FONT)
+            arcade.draw_text('Game Over', self.view_left + st.SCREEN_WIDTH//2, self.view_bottom + st.SCREEN_HEIGHT//2 + 250, arcade.color.RED, font_size= 30, anchor_x = 'center', font_name = st.FONT)
         else:
-            arcade.draw_text('Game Over', self.view_left + st.SCREEN_WIDTH//2, self.view_bottom + st.SCREEN_HEIGHT//2 + 250, arcade.color.MEDIUM_SPRING_GREEN, font_size=30, anchor_x = 'center', font_name =st.FONT)
-            arcade.draw_text(f'Score: {self.final_score}', self.view_left + st.SCREEN_WIDTH//2, self.view_bottom + st.SCREEN_HEIGHT//2 - 200, arcade.color.AZURE_MIST, font_size=20, anchor_x = 'center', font_name =st.FONT)
-        arcade.draw_text(self.output,  self.view_left + st.SCREEN_WIDTH//2, self.view_bottom + st.SCREEN_HEIGHT//2 - 250, arcade.color.AZURE_MIST, font_size=20,  anchor_x = 'center',font_name = st.FONT)
-        arcade.draw_text(f'High Score: {self.highscore}',  self.view_left + st.SCREEN_WIDTH//2, self.view_bottom + st.SCREEN_HEIGHT//2 - 300, arcade.color.AZURE_MIST, font_size=20,  anchor_x = 'center',font_name = st.FONT)
-    
+            arcade.draw_text('Game Over', self.view_left + st.SCREEN_WIDTH//2, self.view_bottom + st.SCREEN_HEIGHT//2 + 250, arcade.color.MEDIUM_SPRING_GREEN, font_size = 30, anchor_x = 'center', font_name = st.FONT)
+            arcade.draw_text(f'Score: {self.final_score}', self.view_left + st.SCREEN_WIDTH//2, self.view_bottom + st.SCREEN_HEIGHT//2 - 200, arcade.color.AZURE_MIST, font_size = 20, anchor_x = 'center', font_name =s t.FONT)
+        arcade.draw_text(self.output,  self.view_left + st.SCREEN_WIDTH//2, self.view_bottom + st.SCREEN_HEIGHT//2 - 250, arcade.color.AZURE_MIST, font_size = 20,  anchor_x = 'center', font_name = st.FONT)
+        arcade.draw_text(f'High Score: {self.highscore}',  self.view_left + st.SCREEN_WIDTH//2, self.view_bottom + st.SCREEN_HEIGHT//2 - 300, arcade.color.AZURE_MIST, font_size = 20,  anchor_x = 'center', font_name = st.FONT)
     
     def on_key_press(self, key, _modifiers):
         return 
+
+
 def main():
     '''
     Main method

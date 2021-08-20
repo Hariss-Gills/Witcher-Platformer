@@ -2,6 +2,8 @@
 Gui elements for the game
 """
 import arcade.gui
+
+
 class GUIManager(arcade.gui.UIManager):
 
     def adjust_mouse_coordinates(self, x, y):
@@ -14,4 +16,6 @@ class GUIManager(arcade.gui.UIManager):
         vx, vy = self.window.view_port
         pl, pr, pb, pt = self.window.ctx.projection_2d
         proj_width, proj_height = pr - pl, pt - pb
-        return x - (abs(proj_width - vw) / 2) + vx, y - (abs(proj_height - vh) / 2) + vy
+        cords_x = x - (abs(proj_width - vw) / 2) + vx
+        cords_y = y - (abs(proj_height - vh) / 2) + vy
+        return cords_x, cords_y

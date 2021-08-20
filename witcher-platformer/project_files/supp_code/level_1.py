@@ -1,6 +1,10 @@
-import arcade, os, timeit
-from . import game_settings as st, game_sprites as sp
+import arcade
+import os
+import timeit
+from . import game_settings as st
+from . import game_sprites as sp
 import game as gm
+
 
 class MyGame(arcade.View):
     '''
@@ -82,7 +86,6 @@ class MyGame(arcade.View):
         self.collect_coin_sound = arcade.Sound(os.path.join(st.ASSET_PATH, 'sounds\coin_sound.ogg'))
         self.death_sound = arcade.Sound(os.path.join(st.ASSET_PATH, 'sounds\death_sound.ogg'))
 
-
     def load_main_layer(self):
         '''
         Load in the first layer separately 
@@ -144,7 +147,7 @@ class MyGame(arcade.View):
         level1_map = arcade.tilemap.read_tmx(os.path.join(st.ASSET_PATH, 'maps\level_1.tmx'))
         coins = 'animated_coins'
         self.coins_list = arcade.tilemap.process_layer(
-            map_object=level1_map,layer_name=coins,scaling=st.MAP_SCALING,use_spatial_hash=True)
+            map_object = level1_map, layer_name = coins, scaling = st.MAP_SCALING, use_spatial_hash=True)
         # Experiment with adding a background over player sprite
         self.background_bottom_sprite = sp.Background_sprites(0 ,'sprites\\background\\background_bottom.png')
         self.background_mid_sprite =  sp.Background_sprites(-0.375, 'sprites\\background\\background_mid.png')
@@ -167,7 +170,6 @@ class MyGame(arcade.View):
         self.physics_engine_background_2 = arcade.PhysicsEngineSimple(self.background_top_sprite, self.empty_list)
         self.played_backgroud_music = None  
                  
-
     def on_show(self):
         self.window.set_mouse_visible(False)
         if self.played_backgroud_music is None:
@@ -397,3 +399,4 @@ class MyGame(arcade.View):
 
         # Stop the draw timer, and calculate total on_draw time.
         self.processing_time = timeit.default_timer() - start_time
+   

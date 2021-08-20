@@ -3,9 +3,11 @@ Sprites used within the game
 '''
 
 from . import game_settings as st
-import os, arcade
+import os
+import arcade
 
-   #- - - Animation Helpers - - -#
+    #- - - Animation Helpers - - -#
+
 
 def load_animation(type, frames_start, frames_end):
     '''
@@ -17,7 +19,8 @@ def load_animation(type, frames_start, frames_end):
         texture = load_texture_pair(f'{path}Fullmain_{type}_{i}.png')
         textures.append(texture)
     return textures    
-            
+
+
 def load_texture_pair(filename):
     '''
     Load a texture pair, with the second being a mirror image
@@ -27,55 +30,56 @@ def load_texture_pair(filename):
          arcade.load_texture(filename, flipped_horizontally=True)
      ]
 
+    #- - - Sprites - - -#
 
-        #- - - Sprites - - -#
+
 class Main_character(arcade.Sprite):
     '''
     Sprite Class to animate background clouds
     '''
     def __init__(self):
-         super().__init__()
+        super().__init__()
 
-         # Default to face-right
-         self.character_face_direction = st.RIGHT_FACING
+        # Default to face-right
+        self.character_face_direction = st.RIGHT_FACING
 
-         # Used for flipping between image sequences
-         self.cur_texture = 0
-         self.scale = st.CHARACTER_SCALING
-        
-         # Track our state
-         self.dead = False
+        # Used for flipping between image sequences
+        self.cur_texture = 0
+        self.scale = st.CHARACTER_SCALING
 
-         # Timer to track time
-         self.time_counter = 0.0
+        # Track our state
+        self.dead = False
+
+        # Timer to track time
+        self.time_counter = 0.0
 
         # --- Load Textures ---
 
-         # Load textures for idling
-         self.idle_textures = load_animation('idle', 0, 4)
+        # Load textures for idling
+        self.idle_textures = load_animation('idle', 0, 4)
 
         # Load textures for running
-         self.run_textures = load_animation('run', 0, 6)
-         
+        self.run_textures = load_animation('run', 0, 6)
+        
         # Load textures for jumping
-         self.jump_textures = load_animation('jump+fall', 0, 5)
+        self.jump_textures = load_animation('jump+fall', 0, 5)
 
         # Load textures for falling
-         self.fall_textures = load_animation('jump+fall', 5, 8)
-         
+        self.fall_textures = load_animation('jump+fall', 5, 8)
+
         # Load textures for landing
-         self.land_textures = load_animation('jump+fall', 8, 10)
+        self.land_textures = load_animation('jump+fall', 8, 10)
          
         # Load textures for death
-         self.death_textures = load_animation('death', 0, 5)
+        self.death_textures = load_animation('death', 0, 5)
                                    
         # Set the initial texture
-         self.texture = self.idle_textures[0][0]
+        self.texture = self.idle_textures[0][0]
 
-        # Hit box will be set based on the first image used. If you want to specify
-        # a different hit box, you can do it like the code below.
+        # Hit box will be set based on the first image used. If you want to 
+        # specify a different hit box, you can do it like the code below.
         # self.set_hit_box([[-22, -64], [22, -64], [22, 28], [-22, 28]])
-         self.set_hit_box(self.texture.hit_box_points)
+        self.set_hit_box(self.texture.hit_box_points)
     
     def cycle_animation(self, delta_time, animation_textures, frame_speed):
         '''
@@ -87,7 +91,8 @@ class Main_character(arcade.Sprite):
             self.cur_texture += 1
             if self.cur_texture >= len(animation_textures):
                 self.cur_texture = 0  
-            self.texture = animation_textures[self.cur_texture][self.character_face_direction]     
+            self.texture = animation_textures[self.cur_texture]
+            [self.character_face_direction]     
 
     def update_animation(self, platforms, delta_time: float = 1/60):
         '''
@@ -96,7 +101,8 @@ class Main_character(arcade.Sprite):
         # Death animation
         if self.dead:
             self.cycle_animation(delta_time, self.death_textures, 200)
-            self.texture = self.death_textures[4][self.character_face_direction]
+            self.texture = self.death_textures[4]
+            [self.character_face_direction]
             return           
         # Idle animation
         if self.change_x == 0 and self.change_y == 0:
@@ -114,9 +120,13 @@ class Main_character(arcade.Sprite):
         elif self.change_y < 0:
             self.cycle_animation(delta_time, self.fall_textures, 100)
             # Land Animation            
-            if len(arcade.get_sprites_at_point([self.center_x, self.bottom - 30], platforms)) > 0:
+            if len(arcade.get_sprites_at_point([self.center_x,
+                                               self.bottom - 30]
+                                               , platforms)) > 0:
                 self.cycle_animation(delta_time, self.land_textures, 175)
                 return            
+
+
 class Background_sprites(arcade.Sprite):
     '''
     Sprite Class to animate background clouds
@@ -125,7 +135,8 @@ class Background_sprites(arcade.Sprite):
         # Set up parent class
         super().__init__()
     
-        self.texture = arcade.load_texture(os.path.join(st.ASSET_PATH, texture))
+        self.texture = arcade.load_texture(os.path.join(st.ASSET_PATH
+                                           , texture))
         self.change_x = change_x  
         
     def update_animation(self, view_left, delta_time: float = 1/60):
@@ -139,3 +150,4 @@ class Background_sprites(arcade.Sprite):
 
         if self.right < view_left:
             self.left = view_left + st.SCREEN_WIDTH + st.RIGHT_VIEWPORT_MARGIN
+            
