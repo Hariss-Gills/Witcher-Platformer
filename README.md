@@ -1,9 +1,8 @@
- ![icon](witcher-platformer/game_assets/icon.ico?raw=false) 
+ ![icon](witcher-platformer/project_files/game_assets/icon.ico) 
  # Witcher Platformer Game
 > A one level platformer game based on the witcher world
 
 ## Gameplay
-
 As a hooded witcher 🐺, you traverse through the grim world collecting coins and try to get the best time and score.
 
 **Score is calculated by 1/Time + Points**
@@ -64,7 +63,7 @@ pyinstaller game.py --windowed --add-data "game_assets;game_assets" --name "Witc
 
 ## Meta
 
-Distributed under the GPL-3.0 License. See [``LICENSE.txt``](https://github.com/Hariss-Gills/Witcher-Platformer-Experimental/blob/main/LICENSE.txt) for more information.
+Distributed under the GPL-3.0 License. See [``LICENSE.txt``](/LICENSE.txt) for more information.
 
 [https://github.com/Hariss-Gills/](https://github.com/Hariss-Gills/)
 
