@@ -27,10 +27,10 @@ You can Package the program using pyinsatller
 
 1. First install pyinstaller with:
 ```pip install pyinstaller```
-2. Enter the directory where the `game.py` file is and run this command
-`pyinstaller game.py --windowed --add-data "game_assets;game_assets" --name "Witcher Platformer" --icon  "game_assets\icon.ico" --onefile` Highscore Does not save and Loads Slower but more user-friendly
+2. Enter the directory where the `game.py` file is and run this command:
+```pyinstaller game.py --windowed --add-data "game_assets;game_assets" --name "Witcher Platformer" --icon  "game_assets\icon.ico" --onefile``` Highscore Does not save and Loads Slower but more user-friendly
 or
-`pyinstaller game.py --windowed --add-data "game_assets;game_assets" --name "Witcher Platformer" --icon  "game_assets\icon.ico"`
+```pyinstaller game.py --windowed --add-data "game_assets;game_assets" --name "Witcher Platformer" --icon  "game_assets\icon.ico"```
 Highscore saves and Loads Faster but less user-friendly
 3. Go into the `Dist` directory and run the `Witcher PLatformer` application
 
