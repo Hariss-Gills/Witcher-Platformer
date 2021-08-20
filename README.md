@@ -1,5 +1,4 @@
-<img src="witcher-platformer/project_files/game_assets/icon.ico" width="100" height="100"/>
- # Witcher Platformer Game
+# <img src="witcher-platformer/project_files/game_assets/icon.ico" width="100" height="100"/> Witcher Platformer Game
 > A one level platformer game based on the witcher world
 
 ## Gameplay
