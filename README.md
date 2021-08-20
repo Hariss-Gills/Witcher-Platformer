@@ -1,8 +1,8 @@
- ![alt text](witcher-platformer/game_assets/icon.ico?raw=false) 
+ ![icon](witcher-platformer/game_assets/icon.ico?raw=false) 
  # Witcher Platformer Game
 > A one level platformer game based on the witcher world
 
-### Gameplay
+## Gameplay
 
 As a hooded witcher 🐺, you traverse through the grim world collecting coins and try to get the best time and score.
 
@@ -17,6 +17,18 @@ As a hooded witcher 🐺, you traverse through the grim world collecting coins a
 - D/➡️ to move right
 - S/⬇️ to move down
 
+### Game Play
+
+Spice this up with screenshots and gifs.
+
+### Installation
+
+You can Package the program using pyinsatller
+
+1. First install pyinstaller with:
+`pip install pyinstaller`
+2. Enter the directory where the `game.py` file is and run this command
+
 ### Functions
 
 * Full GUI
@@ -28,15 +40,6 @@ As a hooded witcher 🐺, you traverse through the grim world collecting coins a
 * Enemies (Difficult)
 * Animated Coins (Easy)
 * More Levels (Medium)
-
-## Installation
-
-Add information once packaged
-
-## Game Play
-
-Spice this up with screenshots and gifs.
-
 
 ## Release History
 
