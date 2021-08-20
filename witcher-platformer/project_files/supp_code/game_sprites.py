@@ -91,8 +91,7 @@ class Main_character(arcade.Sprite):
             self.cur_texture += 1
             if self.cur_texture >= len(animation_textures):
                 self.cur_texture = 0  
-            self.texture = animation_textures[self.cur_texture]
-            [self.character_face_direction]     
+            self.texture = animation_textures[self.cur_texture][self.character_face_direction]     
 
     def update_animation(self, platforms, delta_time: float = 1/60):
         '''
@@ -101,8 +100,7 @@ class Main_character(arcade.Sprite):
         # Death animation
         if self.dead:
             self.cycle_animation(delta_time, self.death_textures, 200)
-            self.texture = self.death_textures[4]
-            [self.character_face_direction]
+            self.texture = self.death_textures[4][self.character_face_direction]
             return           
         # Idle animation
         if self.change_x == 0 and self.change_y == 0:

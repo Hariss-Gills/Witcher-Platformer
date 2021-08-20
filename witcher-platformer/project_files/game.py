@@ -339,7 +339,7 @@ class GameOverView(PauseView):
             arcade.draw_text('Game Over', self.view_left + st.SCREEN_WIDTH//2, self.view_bottom + st.SCREEN_HEIGHT//2 + 250, arcade.color.RED, font_size= 30, anchor_x = 'center', font_name = st.FONT)
         else:
             arcade.draw_text('Game Over', self.view_left + st.SCREEN_WIDTH//2, self.view_bottom + st.SCREEN_HEIGHT//2 + 250, arcade.color.MEDIUM_SPRING_GREEN, font_size = 30, anchor_x = 'center', font_name = st.FONT)
-            arcade.draw_text(f'Score: {self.final_score}', self.view_left + st.SCREEN_WIDTH//2, self.view_bottom + st.SCREEN_HEIGHT//2 - 200, arcade.color.AZURE_MIST, font_size = 20, anchor_x = 'center', font_name =s t.FONT)
+            arcade.draw_text(f'Score: {self.final_score}', self.view_left + st.SCREEN_WIDTH//2, self.view_bottom + st.SCREEN_HEIGHT//2 - 200, arcade.color.AZURE_MIST, font_size = 20, anchor_x = 'center', font_name = st.FONT)
         arcade.draw_text(self.output,  self.view_left + st.SCREEN_WIDTH//2, self.view_bottom + st.SCREEN_HEIGHT//2 - 250, arcade.color.AZURE_MIST, font_size = 20,  anchor_x = 'center', font_name = st.FONT)
         arcade.draw_text(f'High Score: {self.highscore}',  self.view_left + st.SCREEN_WIDTH//2, self.view_bottom + st.SCREEN_HEIGHT//2 - 300, arcade.color.AZURE_MIST, font_size = 20,  anchor_x = 'center', font_name = st.FONT)
     
