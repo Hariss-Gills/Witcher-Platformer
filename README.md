@@ -23,9 +23,12 @@ Spice this up with screenshots and gifs.
 
 You can Package the program using pyinsatller
 
-1. First install pyinstaller with:
+1. First [Download latest version of python][python-url]
+
+2. install pyinstaller with:
 ```pip install pyinstaller```
-2. Enter the directory where the `game.py` file is and run this command:
+
+3. Enter the directory where the `game.py` file is and run this command:
 Not: Highscore Does not save and Loads Slower but more user-friendly
 ```
 pyinstaller game.py --windowed --add-data "game_assets;game_assets" --name "Witcher Platformer" --icon  "game_assets\icon.ico" --onefile
@@ -39,8 +42,7 @@ pyinstaller game.py --windowed --add-data "game_assets;game_assets" --name "Witc
 
 ```
 
-
-3. Go into the `Dist` directory and run the `Witcher PLatformer` application
+4. Go into the `Dist` directory and run the `Witcher PLatformer` application
 
 
 ### Functions
@@ -75,7 +77,7 @@ Distributed under the GPL-3.0 License. See [``LICENSE.txt``](/LICENSE.txt) for m
 5. Create a new Pull Request
 
 <!-- Markdown link & img dfn's -->
-[icon-image]: <img src="witcher-platformer/project_files/game_assets/icon.ico" width="100" height="100" />
+[python-url]: https://www.python.org/downloads/ 
 [npm-url]: https://npmjs.org/package/datadog-metrics
 [npm-downloads]: https://img.shields.io/npm/dm/datadog-metrics.svg?style=flat-square
 [travis-image]: https://img.shields.io/travis/dbader/node-datadog-metrics/master.svg?style=flat-square
