@@ -17,7 +17,7 @@ As a hooded witcher 🐺, you traverse through the grim world collecting coins a
 
 ### Game Play
 
-<blockquote class="imgur-embed-pub" lang="en" data-id="3HJJgmZ"><a href="//imgur.com/3HJJgmZ">View post on imgur.com</a></blockquote><script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script>
+<img src="https://i.imgur.com/3HJJgmZ.gif"/>
 <img src="game_play_showcase/screenshot_menu.png"/>
 <img src="game_play_showcase/screenshot_options.png"/>
 <img src="game_play_showcase/screenshot_pause.png"/>
