@@ -1,4 +1,4 @@
- ![icon][icon-image]
+[icon-image]
  # Witcher Platformer Game
 > A one level platformer game based on the witcher world
 
