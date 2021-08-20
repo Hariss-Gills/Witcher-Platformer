@@ -1,4 +1,4 @@
- ![icon](witcher-platformer/project_files/game_assets/icon.ico) 
+ ![icon][icon-image]
  # Witcher Platformer Game
 > A one level platformer game based on the witcher world
 
@@ -76,7 +76,7 @@ Distributed under the GPL-3.0 License. See [``LICENSE.txt``](/LICENSE.txt) for m
 5. Create a new Pull Request
 
 <!-- Markdown link & img dfn's -->
-[npm-image]: https://img.shields.io/npm/v/datadog-metrics.svg?style=flat-square
+[icon-image]: <img src="witcher-platformer/project_files/game_assets/icon.ico" width="100" height="100" />
 [npm-url]: https://npmjs.org/package/datadog-metrics
 [npm-downloads]: https://img.shields.io/npm/dm/datadog-metrics.svg?style=flat-square
 [travis-image]: https://img.shields.io/travis/dbader/node-datadog-metrics/master.svg?style=flat-square
