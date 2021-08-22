@@ -306,8 +306,9 @@ class GameOverView(PauseView):
         super().on_show()   
 
     def get_highscore(self):
+        high_score_path = os.path.join(st.ASSET_PATH, 'score_data.pickle')
         try:
-            with open('score_data.pickle', 'r+b') as inp:
+            with open(high_score_path, 'r+b') as inp:
                 while True:
                     try:
                         self.highscore = pickle.load(inp)                    
@@ -318,8 +319,7 @@ class GameOverView(PauseView):
                     pickle.dump(self.highscore, inp)
                 inp.close()
         except FileNotFoundError:
-            with open('score_data.pickle', 'wb') as out:
-                print("Create File")
+            with open(high_score_path, 'wb') as out:
                 if self.game_view.player_sprite.dead:
                     self.highscore = 0.0
                 else:
