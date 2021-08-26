@@ -1,7 +1,8 @@
-# <img src="witcher-platformer/project_files/game_assets/icon.ico" width="50" height="50"/> <iframe src="https://itch.io/embed/1173212?linkback=true&amp;bg_color=30325f&amp;fg_color=ffffff&amp;link_color=47e7d4&amp;border_color=50556e" width="552" height="167" frameborder="0"><a href="https://hariss-gills.itch.io/witcher-platformer">Witcher Platformer by Hariss-Gills</a></iframe> Witcher Platformer Game
+# <img src="witcher-platformer/project_files/game_assets/icon.ico" width="50" height="50"/> Witcher Platformer Game
 *A one level platformer game*
 
 ## Gameplay
+<iframe src="https://itch.io/embed/1173212?linkback=true&amp;bg_color=30325f&amp;fg_color=ffffff&amp;link_color=47e7d4&amp;border_color=50556e" width="552" height="167" frameborder="0"><a href="https://hariss-gills.itch.io/witcher-platformer">Witcher Platformer by Hariss-Gills</a></iframe>
 As a hooded witcher 🐺, you traverse through the grim world collecting coins and try to get the best time and score.
 
 **Score is calculated by 1/Time + Points**
